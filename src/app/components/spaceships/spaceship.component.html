@@ -1,0 +1,22 @@
+<div class="row" *ngIf="loading; else spaceShips">
+    Loading Spaceships.....
+</div>
+
+<ng-template #spaceShips>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Booster</th>
+                <th scope="col">Weight</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let spaceShip of spaceshipPage.content">
+                <td>{{spaceShip.name}}</td>
+                <td>{{spaceShip.booster}}</td>
+                <td>{{spaceShip.weight}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
